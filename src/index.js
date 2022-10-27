@@ -1,6 +1,7 @@
 
 import * as THREE from 'three';
 import { OrbitControls } from '../node_modules/three/examples/jsm/controls/OrbitControls';
+import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { light2, light3, light4 } from './direct_light.js';
 import {cube} from './box.js'
 import { TWEEN } from '../node_modules/three/examples/jsm/libs/tween.module.min'
@@ -17,6 +18,12 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.shadowMap.enabled = true;
 document.body.appendChild(renderer.domElement);
 
+const labelRenderer = new CSS2DRenderer();
+				labelRenderer.setSize( window.innerWidth, window.innerHeight );
+				labelRenderer.domElement.style.position = 'absolute';
+				labelRenderer.domElement.style.top = '0px';
+				document.body.appendChild( labelRenderer.domElement );
+
 scene.background = new THREE.Color(0x000000);
 
 scene.add(light2);
@@ -31,7 +38,7 @@ scene.add(sphere2);
 scene.add(line);
 
 camera.position.z =-15;
-const controls = new OrbitControls(camera, renderer.domElement);
+const controls = new OrbitControls(camera, labelRenderer.domElement);
 controls.update();
 
 
@@ -44,6 +51,7 @@ const animate = function () {
 
     TWEEN.update()
     renderer.render(scene, camera);
+    labelRenderer.render(scene, camera);
 }
 
 animate();
