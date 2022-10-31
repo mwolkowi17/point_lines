@@ -7,6 +7,9 @@ import {cube} from './box.js'
 import { TWEEN } from '../node_modules/three/examples/jsm/libs/tween.module.min'
 import { sphere1,sphere2 } from './shapes';
 import {line} from './line'
+import { drawline } from './pointfunc';
+import { linia_cala } from './group_test';
+
 
 //require("./loader.js");
 
@@ -33,9 +36,14 @@ scene.add(light3.target);
 scene.add(light4);
 scene.add(light4.target);
 //scene.add(cube);
-scene.add(sphere1);
-scene.add(sphere2);
-scene.add(line);
+// scene.add(sphere1);
+// scene.add(sphere2);
+// scene.add(line);
+scene.add(linia_cala)
+
+//test segment
+scene.add(drawline(-5,3,5,3)[0]);
+scene.add(drawline(-5,3,5,3)[1]);
 
 camera.position.z =-15;
 const controls = new OrbitControls(camera, labelRenderer.domElement);

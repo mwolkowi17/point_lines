@@ -17,7 +17,7 @@ export const line = new THREE.Line( geometry, material );
 
 const earthDiv = document.createElement( 'div' );
 earthDiv.className = 'label';
-earthDiv.textContent = 'Earth';
+earthDiv.textContent = 'line';
 earthDiv.style.marginTop = '-1em';
 earthDiv.style.color = 'white';
 const earthLabel = new CSS2DObject( earthDiv );
