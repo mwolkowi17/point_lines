@@ -9,6 +9,7 @@ import { sphere1,sphere2 } from './shapes';
 import {line} from './line'
 import { drawline } from './pointfunc';
 import { linia_cala } from './group_test';
+import {line_creation} from './linePointCreation.js';
 
 
 //require("./loader.js");
@@ -40,6 +41,8 @@ scene.add(light4.target);
 // scene.add(sphere2);
 // scene.add(line);
 scene.add(linia_cala)
+scene.add(line_creation(-5,3,5,3))
+
 
 //test segment
 scene.add(drawline(-5,3,5,3)[0]);
