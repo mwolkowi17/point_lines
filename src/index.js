@@ -41,7 +41,7 @@ scene.add(light4.target);
 // scene.add(sphere2);
 // scene.add(line);
 scene.add(linia_cala)
-scene.add(line_creation(-5,3,5,3))
+scene.add(line_creation(-5,3,5,3,'line'))
 
 
 //test segment
