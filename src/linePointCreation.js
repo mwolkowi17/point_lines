@@ -1,5 +1,6 @@
 import * as THREE from 'three';
-import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
+//import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
+import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
 
 
 export function line_creation(xa, ya, xb, yb,labelText) {
@@ -36,13 +37,17 @@ export function line_creation(xa, ya, xb, yb,labelText) {
     const earthDiv = document.createElement('div');
     earthDiv.className = 'label';
     earthDiv.textContent = labelText;
-    earthDiv.style.marginTop = '-1em';
+    //earthDiv.style.marginTop = '-1em';
     earthDiv.style.color = 'white';
-    const earthLabel = new CSS2DObject(earthDiv);
-    earthLabel.position.set(0, 0, 0);
+    earthDiv.style.fontSize ='1px'
+    
+    const earthLabel = new CSS3DObject(earthDiv);
+    earthLabel.position.set(0, 0.5, 0);
+    
     earthLabel.element.style.overflow = 'visible'
     line.add(earthLabel);
-    earthLabel.layers.set(0);
+    //earthLabel.layers.set(0);
+    console.log(earthLabel.getSize)
 
     const linia_cala = new THREE.Group();
 
