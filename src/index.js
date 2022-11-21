@@ -41,13 +41,15 @@ scene.add(light4.target);
 // scene.add(sphere1);
 // scene.add(sphere2);
 // scene.add(line);
-scene.add(linia_cala)
+// scene.add(linia_cala)
 scene.add(line_creation(-5,3,5,3,'line'))
+scene.add(line_creation(-7,5,7,5,'line2'))
+scene.add(line_creation(-8,1,4,1,'line3'))
 
 
 //test segment
-scene.add(drawline(-5,3,5,3)[0]);
-scene.add(drawline(-5,3,5,3)[1]);
+//scene.add(drawline(-5,3,5,3)[0]);
+//scene.add(drawline(-5,3,5,3)[1]);
 
 camera.position.z =15;
 const controls = new OrbitControls(camera, labelRenderer.domElement);

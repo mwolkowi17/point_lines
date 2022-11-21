@@ -42,7 +42,7 @@ export function line_creation(xa, ya, xb, yb,labelText) {
     earthDiv.style.fontSize ='1px'
     
     const earthLabel = new CSS3DObject(earthDiv);
-    earthLabel.position.set(0, 0.5, 0);
+    earthLabel.position.set(xa+xb, ya+0.5, 0);
     
     earthLabel.element.style.overflow = 'visible'
     line.add(earthLabel);
